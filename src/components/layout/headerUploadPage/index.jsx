@@ -1,6 +1,6 @@
 import Header from "~/components/layout/components/header";
 
-function DefaultLayout({ children }) {
+function headerUploadPage({ children }) {
     return (
         <div>
             <Header />
@@ -11,4 +11,4 @@ function DefaultLayout({ children }) {
     );
 }
 
-export default DefaultLayout;
+export default headerUploadPage;
