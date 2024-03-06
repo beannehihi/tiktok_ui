@@ -4,11 +4,12 @@
     //color
     --primary: #ff3b5c;
     --black: #000;
+    --white: #fff;
     --text-color: #333;
 
     //layout
     --default-layout-header-height: 60px;
-    --default-layout-width: 1639px;
+    --default-layout-width: 100%;
 }
 
 * {
@@ -39,4 +40,40 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+input,
+select,
+textarea {
+    background-color: transparent;
+    outline: none;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+body {
+    min-height: 100vh;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
 }

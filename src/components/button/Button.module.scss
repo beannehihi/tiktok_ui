@@ -1,0 +1,70 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    border: 1px solid transparent;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+//button types
+.rounded {
+    border-radius: 999px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    outline: none;
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.outline {
+    border-color: var(--primary);
+    color: var(--primary);
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.08);
+        border-color: var(--primary);
+    }
+}
+
+.upload {
+    background-color: var(--white);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+//button size
+.small {
+    min-width: 96px;
+}
+
+.large {
+    min-width: 208px;
+    padding: 14px 16px;
+}
