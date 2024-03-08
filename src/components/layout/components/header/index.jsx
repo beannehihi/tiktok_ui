@@ -10,7 +10,6 @@ import {
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faPlus,
     faSignOut,
     faSpinner,
@@ -26,6 +25,8 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/accountItem";
 import Menu from "~/components/popper/menu";
+import { MessesIcon } from "~/components/icons";
+import Image from "~/components/image";
 
 const cx = classNames.bind(styles);
 
@@ -160,9 +161,7 @@ function Header() {
                             </Button>
                             <Tippy delay={[0, 200]} content='Messes'>
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon
-                                        icon={faMessage}
-                                    ></FontAwesomeIcon>
+                                    <MessesIcon></MessesIcon>
                                 </button>
                             </Tippy>
                         </>
@@ -186,9 +185,9 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx("user-avatar")}
-                                src='https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/6fe75451879cbfe6efe0300a0c0400a0.jpeg?lk3s=a5d48078&x-expires=1709884800&x-signature=kRxbqDucuZF2qmCLmAniNbm9QXk%3D'
+                                src='https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/dea9c85724d2fa2d3ecb26afdd88f6ad.jpeg?lk3s=a5d48078&x-expires=1710039600&x-signature=C2wR9l66tSSdPIlN3tOzvsQpEFI%3D'
                                 alt=''
                             />
                         ) : (
