@@ -1,4 +1,3 @@
-//layouts
 import { HeaderUploadPage } from "~/components/layout";
 
 import Home from "~/pages/home";

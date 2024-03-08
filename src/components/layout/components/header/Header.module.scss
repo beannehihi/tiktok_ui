@@ -14,10 +14,14 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
-    padding: 0px 24px 0px 16px;
+    padding: 0px var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logo {
+    width: 300px;
 }
 
 .search,
@@ -100,10 +104,33 @@
 .custom {
     color: rgba(22, 24, 35, 0.75);
 }
+//action
+
+.actions {
+    display: flex;
+    align-items: center;
+}
 
 .more-btn {
     font-size: 2rem;
-    margin-left: 28px;
+    margin-left: 16px;
     padding: 4px 8px;
     background: transparent;
+    cursor: pointer;
+}
+
+.action-btn {
+    background: transparent;
+    font-size: 2.4rem;
+    color: #161823;
+    padding: 4px 16px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }
