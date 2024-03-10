@@ -1,9 +1,10 @@
 import classNames from "classnames/bind";
 import { useEffect, useRef, useState } from "react";
+import HeadlessTippy from "@tippyjs/react/headless";
 
+import * as searchServices from "~/apiServices/SearchServices";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import HeadlessTippy from "@tippyjs/react/headless";
 import { Wrapper as PopperWrapper } from "~/components/popper";
 import AccountItem from "~/components/accountItem";
 import { SearchIcon } from "~/components/icons";
@@ -14,39 +15,35 @@ const cx = classNames.bind(styles);
 
 function Search() {
     const [searchValue, setSearchValue] = useState("");
-    const [searchResult, SetSearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
     const inputRef = useRef();
 
-    const deBounce = useDebounce(searchValue, 500);
+    const deBounced = useDebounce(searchValue, 500);
+
     useEffect(() => {
-        if (!deBounce.trim()) {
-            SetSearchResult([]);
+        if (!deBounced.trim()) {
+            setSearchResult([]);
             return;
         }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
 
-        fetch(
-            `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-                deBounce
-            )}&type=less`
-        )
-            .then((res) => res.json())
-            .then((res) => {
-                SetSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
-    }, [deBounce]);
+            const result = await searchServices.search(deBounced);
+
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
+    }, [deBounced]);
 
     const handleClear = () => {
         setSearchValue("");
-        SetSearchResult([]);
+        setSearchResult([]);
         inputRef.current.focus();
     };
 
