@@ -22,6 +22,7 @@
 
 .logo {
     width: 300px;
+    display: flex;
 }
 
 //action
@@ -59,7 +60,7 @@
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--white);
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: var(--font-family);
     background-color: var(--primary);
 }
 
