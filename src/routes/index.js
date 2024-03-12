@@ -1,6 +1,6 @@
-import routesConfig from "~/config/routes";
+import config from "~/config";
 
-import { HeaderUploadPage } from "~/components/layout";
+import { HeaderUploadPage } from "~/layouts";
 
 import Home from "~/pages/home";
 import Following from "~/pages/following";
@@ -10,11 +10,11 @@ import Search from "~/pages/search";
 
 //public Routes
 const publicRoutes = [
-    { path: routesConfig.home, component: Home },
-    { path: routesConfig.following, component: Following },
-    { path: routesConfig.profiles, component: Profiles },
-    { path: routesConfig.upload, component: Upload, layout: HeaderUploadPage },
-    { path: routesConfig.search, component: Search, layout: null },
+    { path: config.routes.home, component: Home },
+    { path: config.routes.following, component: Following },
+    { path: config.routes.profiles, component: Profiles },
+    { path: config.routes.upload, component: Upload, layout: HeaderUploadPage },
+    { path: config.routes.search, component: Search, layout: null },
 ];
 
 const privateRoutes = [];

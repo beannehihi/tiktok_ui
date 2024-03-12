@@ -1,4 +1,4 @@
-import Header from "~/components/layout/components/header";
+import Header from "~/layouts/components/header";
 
 function headerUploadPage({ children }) {
     return (
