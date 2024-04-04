@@ -10,9 +10,6 @@ function SuggestedAccounts({ label }) {
         <div className={cx("wrapper")}>
             <p className={cx("label")}>{label}</p>
             <AccountItems></AccountItems>
-            <AccountItems></AccountItems>
-            <AccountItems></AccountItems>
-            <AccountItems></AccountItems>
             <p className={cx("more-btn")}>See more</p>
         </div>
     );
